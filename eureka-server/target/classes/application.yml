@@ -1,0 +1,16 @@
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: eureka-server
+
+
+eureka:
+  instance:
+    hostname: ${DOCKER_HOST:localhost}     
+    prefer-ip-address: true
+  client:
+    fetch-registry: false
+    register-with-eureka: false

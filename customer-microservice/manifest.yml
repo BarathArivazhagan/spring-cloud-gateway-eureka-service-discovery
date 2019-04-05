@@ -1,0 +1,6 @@
+---
+applications:
+- name: customer-microservice
+  memory: 1024M
+  instances: 1
+  path: target/customer-microservice-0.0.1-SNAPSHOT.jar

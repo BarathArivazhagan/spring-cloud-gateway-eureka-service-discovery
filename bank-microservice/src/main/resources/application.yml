@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: bank-microservice
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"

@@ -1,0 +1,5 @@
+---
+applications:
+- name: bank-service
+  memory: 1024M
+  buildpack: java_buildpack

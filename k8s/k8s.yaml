@@ -1,0 +1,78 @@
+
+# deployment config for bank service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bank-microservice
+spec:
+  selector:
+    matchLabels:
+      app: bank-microservice
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: bank-microservice
+    spec:
+      containers:
+      - name: bank-microservice
+        image: barathece91/bank-microservice
+        ports:
+        - containerPort: 8081
+      
+   
+---
+# deployment config for customer service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-microservice
+spec:
+  selector:
+    matchLabels:
+      app: customer-microservice
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: customer-microservice
+    spec:
+      containers:   
+      - name: customer-microservice
+        image: barathece91/customer-microservice
+        ports:
+        - containerPort: 8082
+        env:
+        - name: bank.service.name
+          value: http://bank-microservice:8081
+
+ 
+
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: bank-microservice
+spec:
+  selector:
+    app: bank-microservice
+  type: ClusterIP
+  ports:
+  - protocol: TCP
+    port: 8081
+    targetPort: 8081
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: customer-microservice
+spec:
+  selector:
+    app: customer-microservice
+  type: ClusterIP
+  ports:
+  - protocol: TCP
+    port: 8082
+    targetPort: 8082
+

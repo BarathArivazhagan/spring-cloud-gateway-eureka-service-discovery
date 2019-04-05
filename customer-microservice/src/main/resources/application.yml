@@ -1,0 +1,17 @@
+server:
+  port: 8082
+  
+
+spring:
+  application:
+    name: customer-microservice
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+    
+

@@ -1,0 +1,9 @@
+
+
+spring:
+   cloud:
+      config:
+        name: bank-service
+        
+        
+       

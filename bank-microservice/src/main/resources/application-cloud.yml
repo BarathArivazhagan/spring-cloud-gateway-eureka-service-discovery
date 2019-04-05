@@ -1,0 +1,16 @@
+server:
+  port: 8081
+  
+
+spring:
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+    
+
+             
+
+            

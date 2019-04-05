@@ -1,0 +1,13 @@
+  
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: bank-service
+          uri: http://localhost:8081
+          predicates:
+          - Header= service,bank
+        - id: customer-service
+          uri: http://localhost:8082
+          predicates:
+          - Header= service,customer
