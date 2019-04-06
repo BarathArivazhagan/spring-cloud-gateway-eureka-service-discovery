@@ -5,7 +5,16 @@ server:
 spring:
   application:
     name: customer-microservice
+  cloud:
+    discovery:
+      enabled: true
 
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka
 
 management:
   endpoints:
@@ -13,5 +22,7 @@ management:
       exposure:
         include:
         - "*"
-    
-
+logging:
+  level:
+    org.springframework.web:  info
+    web: debug

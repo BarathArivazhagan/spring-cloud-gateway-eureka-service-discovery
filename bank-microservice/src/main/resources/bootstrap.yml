@@ -3,7 +3,9 @@
 spring:
    cloud:
       config:
-        name: bank-service
+        name: bank-microservice
+        uri: ${SPRING_CONFIG_URI:http://localhost:8888}
+
         
         
        

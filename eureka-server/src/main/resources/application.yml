@@ -10,7 +10,7 @@ spring:
 eureka:
   instance:
     hostname: ${DOCKER_HOST:localhost}     
-    prefer-ip-address: true
+#    prefer-ip-address: true
   client:
     fetch-registry: false
     register-with-eureka: false

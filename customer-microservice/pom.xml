@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>customer microservice</name>
-	<description> customer microservice deployed in kubernetes</description>
+	<description> customer microservice</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -23,7 +23,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<swagger.version>2.9.2</swagger.version>		
-		<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -35,15 +35,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-				
 		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-netflix-eureka-client</artifactId>		  
+		</dependency>
+		
+				
+	<!-- 	<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-		</dependency>
+		</dependency> -->
 	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -55,6 +60,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		
+	<!-- 	<dependency>
+		    <groupId>com.netflix.eureka</groupId>
+		    <artifactId>eureka-client</artifactId>		  
+		    <scope>runtime</scope>
+		</dependency> -->
 		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

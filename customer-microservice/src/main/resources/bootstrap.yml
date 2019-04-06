@@ -1,6 +1,7 @@
 spring:
   cloud:
     config:
+      enabled: false
       name: customer-microservice
-
+      uri: ${SPRING_CONFIG_URI:http://localhost:8888}
      
