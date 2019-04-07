@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 services:
   config-server:
     build: ./config-server
@@ -9,7 +9,7 @@ services:
     build: ./eureka-server
     image: barathece91/spring-cloud-gateway-eureka-server
     ports:
-      - "8080:8080"
+      - "9000:9000"
     depends_on:
      - config-server
   bank-service:
@@ -21,7 +21,7 @@ services:
       - config-server
       - eureka-server
     environment:
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8080/eureka    
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:9000/eureka    
       SPRING_CLOUD_CONFIG_URI: http://config-server:8888
   customer-service:
     build: ./customer-microservice
@@ -32,7 +32,7 @@ services:
       - config-server
       - eureka-server
     environment:
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8080/eureka    
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:9000/eureka    
       SPRING_CLOUD_CONFIG_URI: http://config-server:8888
   api-cloud-gateway:
     build: ./api-cloud-gateway
@@ -44,5 +44,5 @@ services:
       - customer-service
       - bank-service
     environment:
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8080/eureka
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:9000/eureka
       SPRING_CLOUD_CONFIG_URI: http://config-server:8888

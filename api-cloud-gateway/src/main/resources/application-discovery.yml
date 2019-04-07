@@ -1,0 +1,17 @@
+  
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: bank-service
+          uri: http://localhost:8081
+          predicates:
+          - Path= /bankms/*
+          filters:
+          - StripPrefix=1
+        - id: customer-service
+          uri: http://localhost:8082
+          predicates:
+          - Path= /customerms/*
+          filters:
+          - StripPrefix=1

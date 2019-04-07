@@ -11,7 +11,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://localhost:8080/eureka # value will get overriden if passed from external config
+      defaultZone: http://localhost:9000/eureka # value will get overriden if passed from external config
       
 management:
   endpoints:

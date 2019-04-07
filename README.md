@@ -1,6 +1,6 @@
 # spring-cloud-gateway-eureka-service-discovery
 
-This project demonstrates the usage of API gateway between microservices using spring cloud gateway along with netflix eureka service discovery
+This project demonstrates the usage of API gateway between microservices using spring cloud gateway along with netflix eureka service discovery.
 
 
 ## what is spring cloud gateway ?
@@ -94,7 +94,7 @@ spring:
 $ curl http://localhost:8081/bankms/banks
 
 
-$ curl http://localhost:8081/custms/customers
+$ curl http://localhost:8081/customerms/customers
 
 ```
 
